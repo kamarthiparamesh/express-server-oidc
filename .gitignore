@@ -43,3 +43,4 @@ keys
 
 dist
 package-lock.json
+/.vscode
