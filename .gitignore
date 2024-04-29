@@ -42,3 +42,4 @@ db.json
 keys
 
 dist
+package-lock.json
