@@ -9,7 +9,8 @@ app.use(express.urlencoded({ extended: false }));
 
 const PORT = process.env.PORT || 3001;
 
-//const code_verifier = process.env.CODE_VERIFIER || 'affinidissoabc-klDgGJkAE';
+const code_verifier = generators.codeVerifier();
+
 const getClient = async () => {
     try {
         const affinidi = await Issuer.discover(process.env.PROVIDER_ISSUER);
@@ -38,7 +39,7 @@ const initializeServer = async () => {
     app.get('/api/affinidi-auth/init', async (req, res, next) => {
 
         const state = generators.state();
-        const code_verifier = generators.codeVerifier();
+        //const code_verifier = generators.codeVerifier();
         const params = {
             code_challenge: generators.codeChallenge(code_verifier),
             code_challenge_method: 'S256',
@@ -51,15 +52,15 @@ const initializeServer = async () => {
 
         const authorizationUrl = client.authorizationUrl(params);
 
-        res.send({ authorizationUrl, code_verifier });
+        res.send({ authorizationUrl });
     });
 
     app.post('/api/affinidi-auth/complete', async (req, res, next) => {
 
-        const { code, state, code_verifier } = req.body;
+        const { code, state } = req.body;
         if (!code || !state || !code_verifier) {
             res.status(400).send({
-                error: 'Invalid data code/state/code_verifier is missing'
+                error: 'Invalid data code/state is missing'
             });
             return;
         }

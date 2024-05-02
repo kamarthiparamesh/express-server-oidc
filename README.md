@@ -77,8 +77,7 @@ curl --location 'http://localhost:3001/api/affinidi-auth/init'
 Sample Response
 ```
 {
-    "authorizationUrl":"https://427cc658-ddf8-4e5e-93b3-c038c13fac19.apse1.login.affinidi.io/oauth2/auth?client_id=ee144991-adc3-4f31-96bc-7876cdec6ea3&scope=openid&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fcallback&code_challenge=nclP4DJsfLwJft6KQ58A1gGaNy0g4kVWtli93t-F_Ho&code_challenge_method=S256&state=QaOxjjU-oxrIJvq6ca0BYxpVGK3YrfCN5nucnyrL7kE",
-    "code_verifier":"pS9w5PlOfohIbllyspsQ7yxgMKHDXe4k4-B-5pAtD_o"
+    "authorizationUrl":"https://427cc658-ddf8-4e5e-93b3-c038c13fac19.apse1.login.affinidi.io/oauth2/auth?client_id=ee144991-adc3-4f31-96bc-7876cdec6ea3&scope=openid&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fauth%2Fcallback&code_challenge=nclP4DJsfLwJft6KQ58A1gGaNy0g4kVWtli93t-F_Ho&code_challenge_method=S256&state=QaOxjjU-oxrIJvq6ca0BYxpVGK3YrfCN5nucnyrL7kE"
 }
 ```
 
@@ -88,9 +87,8 @@ Sample Response
 curl --location 'http://localhost:3001/api/affinidi-auth/complete' \
 --header 'Content-Type: application/json' \
 --data '{
-    "code": "ory_ac_p2vM5AewL48GmmZhUtx9D64Af7B-oHW-MpuJuSZy-iE.D7poqX6wV0I96GoK6eaq_hbNmqvWSaars8MmC5x0KiI",
-    "state": "QaOxjjU-oxrIJvq6ca0BYxpVGK3YrfCN5nucnyrL7kE",
-    "code_verifier":"pS9w5PlOfohIbllyspsQ7yxgMKHDXe4k4-B-5pAtD_o"
+    "code": "ory_ac_LfchXpWu3VkPWYU1AcpaCjbxGm3z_U0e6SF1QxwJBno.hnapsQj9n8fuBp-poZw1i-qCBmFn2jRKdEXD-Fd0U0c",
+    "state": "kb_2RYDCKUCPfohcpbshl_MaNwA8JYeSYY7QjqCYM0Y"
 }'
 ```
 
